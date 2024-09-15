@@ -1,5 +1,5 @@
-1. Denumirea proiectului:
-2. PacMan Ce reprezintă proiectul:
+1. Denumirea proiectului: PacMan 
+2. Ce reprezintă proiectul:
 3. Pac-Man este un joc arcade clasic lansat în 1980. Jocul se desfășoară într-un labirint plin de puncte (mâncare) și diverse obstacole. Jucătorul controlează un personaj rotund, galben (Pac-Man), al cărui scop este să mănânce toate punctele din labirint în timp ce evită să fie prins de fantomele care îl urmăresc. Dacă Pac-Man mănâncă un punct special (power pellet), el poate pentru o perioadă scurtă să "mănânce" fantomele, obținând puncte bonus. Jocul se termină dacă Pac-Man este prins de fantome de prea multe ori. Pac-Man este cunoscut pentru simplitatea și elementul său strategic, fiind unul dintre cele mai populare și recunoscute jocuri video din lume.
 Funcția fișierelor Map.hpp, Player.hpp, și Game.hpp:
 
