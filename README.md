@@ -17,16 +17,27 @@ game: Ignoră executabilul generat (în acest caz, game).
 
 # Game.cpp
 Include implementarea metodelor din clasa Game definită în fișierul .hpp.
+
 Constructorul Game inițializează variabilele gameMap, player, și setează gameOver la false.
+
 Metoda run() este bucla principală a jocului care continuă până când jocul se termină.
+
 Metoda handleInput() gestionează intrările jucătorului.
+
 Metoda isGameOver() verifică dacă jocul s-a terminat.
+
 # Map.cpp 
 Constructorul Map(): Inițializează harta jocului cu spații goale ' ' în mijloc și pereți ('#') pe margini.
+
 drawMap(): Desenează harta la consolă, afișând poziția jucătorului cu P și scorul curent.
+
 isWall(): Verifică dacă poziția specificată este un perete, returnând true dacă elementul este un perete ('#') sau dacă poziția este în afara limitelor hărții.
+
 setMapElement(): Setează un element specific (cum ar fi un obiect sau un obstacol) în poziția specificată de coordonatele (x, y).
+
 # Player.cpp
 Constructorul Player::Player(): Inițializează poziția jucătorului (x, y) și scorul la 0.
+
 move(): În funcție de direcția primită (caracterele 'w', 'a', 's', 'd' pentru deplasarea sus, stânga, jos, dreapta), se calculează noua poziție a jucătorului. Dacă noua poziție nu este un perete, jucătorul se deplasează acolo.
+
 checkFoodCollision(): Verifică dacă jucătorul a colizionat cu mâncare, reprezentată pe hartă prin simbolul 'F'. Dacă da, scorul este crescut cu 10, iar mâncarea este eliminată de pe hartă (schimbând elementul de la coordonatele respective în spațiu gol ' ').
