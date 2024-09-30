@@ -1,0 +1,28 @@
+# Compiler
+CXX = g++
+CXXFLAGS = -Wall -g
+
+# Executable
+TARGET = game
+
+# Source files
+SRCS = Game.cpp Player.cpp Map.cpp
+
+# Object files (auto-generated from SRCS by replacing .cpp with .o)
+OBJS = $(SRCS:.cpp=.o)
+
+# Rule to build the executable
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+
+# Rule to compile .cpp files into .o files
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Clean rule to remove generated files
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+# Optional rule to run the game
+run: $(TARGET)
+	./$(TARGET)
