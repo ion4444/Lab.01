@@ -10,8 +10,11 @@ Funcția fișierelor Map.hpp, Player.hpp, și Game.hpp:
 ***.Game.hpp Fișierul Game.hpp definește clasa care coordonează întregul joc, fiind responsabilă pentru logica principală a jocului, interacțiunea dintre harta jocului și jucător. Constructor Game(): Inițializează jocul, harta, și poziția jucătorului, și setează variabila gameOver la false. Aceasta setează starea inițială a jocului. void run(): Este bucla principală a jocului. Aceasta funcție continuă să ruleze până când variabila gameOver devine true. În cadrul buclei: Desenează harta folosind metoda drawMap() din clasa Map. Gestionează intrarea de la utilizator prin metoda handleInput(). Verifică coliziunile jucătorului cu mâncarea și actualizează starea jocului. void handleInput(): Gestionează input-ul utilizatorului folosind _kbhit() și _getch() pentru a detecta apăsările tastelor. Dacă jucătorul apasă x, jocul se oprește (gameOver = true), în caz contrar, actualizează poziția jucătorului folosind metoda move() din clasa Player. bool isGameOver() const: Returnează valoarea variabilei gameOver, indicând dacă jocul s-a terminat sau nu.
 # .gitignore :
 *.o: Ignoră toate fișierele obiect generate din fișierele .cpp (extensia .o).
+
 game: Ignoră executabilul generat (în acest caz, game).
+
 *~: Ignoră fișierele de backup temporare pe care unele editoare de text le generează.
+
 # Game.cpp
 Include implementarea metodelor din clasa Game definită în fișierul .hpp.
 Constructorul Game inițializează variabilele gameMap, player, și setează gameOver la false.
