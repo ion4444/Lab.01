@@ -1,0 +1,21 @@
+# Ignoră fișierele obiect
+*.o
+
+# Ignoră fișierele de backup ale editorului
+*~
+
+# Ignoră executabilele generate
+game
+
+# Ignoră fișierele de depanare
+*.log
+*.out
+*.aux
+*.tmp
+
+# Ignoră directoarele temporare (opțional, dacă sunt generate)
+temp/
+tmp/
+
+# Ignoră fișierele generate de Makefile (dacă există un build intermediar)
+build/
