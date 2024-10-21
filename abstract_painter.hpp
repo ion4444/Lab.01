@@ -1,6 +1,6 @@
 #pragma once
 
-#include "point.hpp"
+#include "map.hpp"  // Include fișierul map.hpp pentru a avea acces la clasa Map
 
 // Clasa abstractă AbstractPainter
 struct AbstractPainter {
