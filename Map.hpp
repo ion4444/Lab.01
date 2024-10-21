@@ -1,18 +1,34 @@
-// Map.hpp #ifndef MAP_HPP #define MAP_HPP
+#ifndef MAP_HPP
+#define MAP_HPP
 
-class Map { public: static const int width = 20; static const int height = 10; char map[height][width]; // 2D array for the game map
+#include <iostream>
+#include <vector>
 
-// Constructor to initialize the map
-Map();
+class Map {
+private:
+    static const int width = 20;  // Lățimea hărții
+    static const int height = 10; // Înălțimea hărții
+    char map[height][width];      // Harta ca matrice de caractere
 
-// Function to draw the map
-void drawMap(int playerX, int playerY, int score) const;
+public:
+    // Constructor pentru a inițializa harta
+    Map();
+    Map(const Map& other);                   // Constructor de copiere
+    Map& operator=(const Map& other);        // Operator de atribuire
+    bool operator==(const Map& other) const; // Operator de comparație egalitate
 
-// Check if the given position is a wall
-bool isWall(int x, int y) const;
+    // Funcție pentru a desena harta
+    void drawMap(int playerX, int playerY, int score) const;
 
-// Set the map element at (x, y)
-void setMapElement(int x, int y, char element);
+    // Verifică dacă o poziție dată este un zid
+    bool isWall(int x, int y) const;
+
+    // Setează elementul hărții la (x, y)
+    void setMapElement(int x, int y, char element);
+
+    // Operatori de intrare/ieșire
+    friend std::istream& operator>>(std::istream& in, Map& map);
+    friend std::ostream& operator<<(std::ostream& out, const Map& map);
 };
 
 #endif
