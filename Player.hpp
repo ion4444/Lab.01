@@ -1,15 +1,38 @@
-// Player.hpp #ifndef PLAYER_HPP #define PLAYER_HPP
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
 
-class Player { public: int x, y; // Player's position int score; // Player's score
+#include "Map.hpp"
+#include <iostream>
 
-// Constructor to initialize the player's starting position
-Player(int startX, int startY);
+class Player {
+private:
+    int x;       // Coordonata x a jucătorului
+    int y;       // Coordonata y a jucătorului
+    int score;   // Scorul jucătorului
 
-// Move the player based on input
-void move(char direction, const class Map &map);
+public:
+    // Constructor pentru a inițializa poziția de început a jucătorului
+    Player(int startX, int startY);
 
-// Check if the player has collided with food
-void checkFoodCollision(class Map &map);
+    // Constructor de copiere
+    Player(const Player& other);
+
+    // Operator de atribuire
+    Player& operator=(const Player& other);
+
+    // Operator de comparație egalitate
+    bool operator==(const Player& other) const;
+
+    // Mută jucătorul în funcție de input
+    void move(char direction, const Map &map);
+
+    // Verifică dacă jucătorul a intrat în coliziune cu hrana
+    void checkFoodCollision(Map &map);
+
+    // Funcții de acces pentru coordonatele jucătorului și scor
+    int getX() const { return x; }
+    int getY() const { return y; }
+    int getScore() const { return score; }
 };
 
 #endif
