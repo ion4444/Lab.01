@@ -1,42 +1,51 @@
 #include "Game.hpp"
-#include <iostream>
 
 // Constructor to initialize the game
-Game::Game() : gameMap(), player(), gameOver(false) {
-    // Initialize the game (set up the map, player position, etc.)
-    std::cout << "Game initialized!" << std::endl;
+Game::Game() : gameMap(), player(), gameOver(false) {}
+
+// Constructor de copiere
+Game::Game(const Game& other) : gameMap(other.gameMap), player(other.player), gameOver(other.gameOver) {}
+
+// Operator de atribuire
+Game& Game::operator=(const Game& other) {
+    if (this != &other) {
+        gameMap = other.gameMap;
+        player = other.player;
+        gameOver = other.gameOver;
+    }
+    return *this;
+}
+
+// Operator de comparație egalitate
+bool Game::operator==(const Game& other) const {
+    return gameMap == other.gameMap && player == other.player && gameOver == other.gameOver;
 }
 
 // Main game loop
 void Game::run() {
-    while (!gameOver) {
-        handleInput();  // Get user input
-        // Add game logic here (like updating the map, moving the player, etc.)
-        if (isGameOver()) {
-            std::cout << "Game Over!" << std::endl;
-            gameOver = true;
-        }
-    }
+    // Implementare buclă principală
 }
 
 // Handle player input
 void Game::handleInput() {
-    char input;
-    std::cout << "Enter input (w/a/s/d to move, q to quit): ";
-    std::cin >> input;
-
-    switch (input) {
-        case 'w': player.moveUp(); break;
-        case 'a': player.moveLeft(); break;
-        case 's': player.moveDown(); break;
-        case 'd': player.moveRight(); break;
-        case 'q': gameOver = true; break;
-        default: std::cout << "Invalid input!" << std::endl;
-    }
+    // Implementare gestionare input
 }
 
 // Check if the game is over
 bool Game::isGameOver() const {
-    // Add logic to check if the game is actually over (e.g., player wins, etc.)
     return gameOver;
+}
+
+// Operator de intrare
+std::istream& operator>>(std::istream& in, Game& game) {
+    // Citire gameMap și player din flux
+    in >> game.gameMap >> game.player;
+    return in;
+}
+
+// Operator de ieșire
+std::ostream& operator<<(std::ostream& out, const Game& game) {
+    // Afișare gameMap și player în flux
+    out << game.gameMap << " " << game.player;
+    return out;
 }
