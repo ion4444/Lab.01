@@ -1,0 +1,32 @@
+# Compiler settings
+CXX = g++
+CXXFLAGS = -Wall -g -std=c++17
+
+# Target executable
+TARGET = game
+
+# Library paths
+LIBS = -L. -lsfml-graphics -lsfml-window -lsfml-system -lpainter -lmap
+INCLUDE = -I.
+
+# Source files
+SRCS = main.cpp
+OBJS = $(SRCS:.cpp=.o)
+
+# Build targets
+all: $(TARGET)
+
+libmap.a: map.o
+	ar rcs libmap.a map.o
+
+libpainter.so: painter.o
+	$(CXX) -shared -o libpainter.so painter.o
+
+$(TARGET): $(OBJS) libmap.a libpainter.so
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS) $(LIBS)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
+
+clean:
+	rm -f $(OBJS) $(TARGET) *.o *.a *.so
