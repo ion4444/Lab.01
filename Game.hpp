@@ -1,6 +1,6 @@
 // Game.hpp #ifndef GAME_HPP #define GAME_HPP
 
-#include "Map.hpp" #include "Player.hpp"
+#include "Map.hpp" 
 
 class Game { private: Map gameMap; Player player; bool gameOver;
 
