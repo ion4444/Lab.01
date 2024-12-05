@@ -1,0 +1,22 @@
+
+---
+
+### 3. **Directorul `tests` și Testele Unitare**
+
+#### **Test pentru `Player` (`tests/player_test.cpp`)**
+```cpp
+#include <gtest/gtest.h>
+#include "../include/player.hpp"
+
+TEST(PlayerTest, GetNameTest) {
+    Player player("John");
+    ASSERT_EQ(player.getName(), "John");
+}
+
+TEST(PlayerTest, MoveTest) {
+    Player player("John");
+    testing::internal::CaptureStdout();
+    player.move();
+    std::string output = testing::internal::GetCapturedStdout();
+    ASSERT_EQ(output, "John is moving.\n");
+}
