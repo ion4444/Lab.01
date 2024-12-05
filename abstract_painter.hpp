@@ -1,18 +1,40 @@
+/**
+ * @file abstract_painter.hpp
+ * @brief Declarația clasei AbstractPainter.
+ * 
+ * Proiect: Game Framework  
+ * Autor: [Baxanean Ionuț]  
+ * Data: [5.12.2024]  
+ * 
+ * Clasa AbstractPainter definește interfața pentru funcționalitățile de desenare.
+ */
+
 #pragma once
-
-#include "map.hpp"  // Include fișierul map.hpp pentru a avea acces la clasa Map
-#include <string>
 #include <vector>
-#include <memory>
+#include <string>
 
-// Clasa abstractă AbstractPainter
+/**
+ * @struct AbstractPainter
+ * @brief Interfață pentru funcții de desenare și text.
+ */
 struct AbstractPainter {
-    // Funcție virtuală pură pentru a desena o imagine
+    /**
+     * @brief Desenează o imagine între două puncte.
+     * @param topLeft Punctul de colț stânga sus.
+     * @param bottomRight Punctul de colț dreapta jos.
+     * @param image Reprezentarea imaginii sub formă de matrice de caractere.
+     */
     virtual void DrawImage(Point topLeft, Point bottomRight, const std::vector<std::vector<char>>& image) = 0;
 
-    // Funcție virtuală pură pentru a scrie un text
+    /**
+     * @brief Scrie text într-o poziție specificată.
+     * @param position Poziția unde se scrie textul.
+     * @param text Textul ce trebuie afișat.
+     */
     virtual void WriteText(Point position, const std::string& text) = 0;
 
-    // Destructor virtual pentru a asigura distrugerea corectă a derivatei
-    virtual ~AbstractPainter() = default; 
+    /**
+     * @brief Destructor virtual pentru gestionarea corectă a derivatelor.
+     */
+    virtual ~AbstractPainter() = default;
 };
