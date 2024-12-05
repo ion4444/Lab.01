@@ -135,3 +135,25 @@ Includerea fișierului abstract_painter.hpp:
 
 Fișierul abstract_painter.hpp este inclus pentru a putea accesa definițiile din AbstractPainter, deoarece Painter este o clasă derivată din aceasta.
 Acestea sunt schimbările principale observate în acest cod, fiind o implementare completă a funcționalităților din clasa abstractă AbstractPainter în clasa Painter
+
+
+# Game Framework
+
+## Descrierea Proiectului
+Acest proiect este o platformă de bază pentru un joc, implementat utilizând C++ și biblioteci externe. Include funcționalități pentru gestionarea unei hărți de joc, manipularea jucătorilor și desenarea graficii.
+
+## Regulile Jocului
+1. Fiecare jucător se poate mișca pe hartă, interacționând cu tile-urile disponibile.
+2. Tile-urile hărții sunt reprezentate de tipuri predefinite precum iarbă, apă sau munți.
+3. Obiectele grafice sunt desenate și afișate utilizând biblioteca SFML.
+
+## Dependențe
+- **Compilator:** g++ (compatibil cu C++17)
+- **Biblioteci externe:** 
+  - [SFML](https://www.sfml-dev.org/) (Simple and Fast Multimedia Library) pentru grafică.
+
+## Construirea Aplicației
+1. Asigurați-vă că aveți instalate dependințele necesare (SFML).
+2. Compilați aplicația utilizând comanda:
+   ```bash
+   make
