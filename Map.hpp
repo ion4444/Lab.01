@@ -4,7 +4,7 @@
  * 
  * Proiect: Game Framework  
  * Autor: [Baxanean Ionuț]  
- * Data: [12.05.24]  
+ * Data: [05.12.24]  
  * 
  * Clasa Map gestionează structura hărții jocului și funcționalitățile asociate.
  */
